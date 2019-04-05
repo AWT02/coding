@@ -29,15 +29,16 @@ public enum PriceCode {
      * Search and get PriceCode that match with code.
      * @param code price code.
      * @return PriceCode that match.
-     * @throws Exception Invalid Price Code.
+     * @throws IllegalArgumentException Invalid Price Code.
      */
-    public static PriceCode getPiceCode(final int code) throws Exception {
+    public static PriceCode getPiceCode(final int code)
+            throws IllegalArgumentException {
         for (final PriceCode priceCode : PriceCode.values()) {
             if (priceCode.getCode() == code) {
                 return priceCode;
             }
         }
-        throw new Exception("Invalid Price Code:" + code);
+        throw new IllegalArgumentException("Invalid Price Code:" + code);
     }
 
     /**

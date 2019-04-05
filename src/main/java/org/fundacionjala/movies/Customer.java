@@ -1,7 +1,7 @@
 package org.fundacionjala.movies;
 
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class represent a customer.
@@ -16,7 +16,7 @@ public class Customer {
     /**
      * Vector of movies rented by customer.
      */
-    private final Vector rentals = new Vector();
+    private final List<Rental> rentals = new ArrayList<Rental>();
 
     /**
      * Parameterized constructor.
@@ -31,7 +31,7 @@ public class Customer {
      * @param arg Rental.
      **/
     public void addRental(final Rental arg) {
-        this.rentals.addElement(arg);
+        this.rentals.add(arg);
     }
 
     /**
@@ -57,11 +57,9 @@ public class Customer {
     public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
-        final Enumeration rentalList = this.rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
-        while (rentalList.hasMoreElements()) {
+        for (final Rental each : this.rentals) {
             double thisAmount = 0;
-            final Rental each = (Rental) rentalList.nextElement();
             //determine amounts for each line
             final PriceCode priceCode = each.getMovie().getPriceCode();
             switch (priceCode) {
@@ -98,6 +96,7 @@ public class Customer {
             result += "\t" + each.getMovie().getTitle() + "\t"
                     + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
+
         }
         //add footer lines
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
