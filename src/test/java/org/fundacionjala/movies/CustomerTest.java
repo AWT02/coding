@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class CustomerTest {
 
     /** Logger. **/
-    private static final Logger logger =
+    private static final Logger LOGGER =
             Logger.getLogger(CustomerTest.class.getName());
 
     /** Verify rent some videos. */
@@ -21,7 +21,7 @@ public class CustomerTest {
         final Customer customer = new Customer("Test");
         customer.addRental(new Rental(new Movie("The Revenant", PriceCode.NEW_RELEASE), 2));
         customer.addRental(new Rental(new Movie("Terminator", PriceCode.REGULAR), 2));
-        logger.info(customer.statement());
+        LOGGER.info(customer.statement());
         assertEquals(customer.amountOfRentalMovies(), 2);
     }
 }
