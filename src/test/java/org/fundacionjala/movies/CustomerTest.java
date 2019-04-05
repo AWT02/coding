@@ -1,8 +1,7 @@
 package org.fundacionjala.movies;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
-
-import java.util.logging.Logger;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,7 +20,7 @@ public class CustomerTest {
         final Customer customer = new Customer("Test");
         customer.addRental(new Rental(new Movie("The Revenant", PriceCode.NEW_RELEASE), 2));
         customer.addRental(new Rental(new Movie("Terminator", PriceCode.REGULAR), 2));
-        LOGGER.fine("Custommer statement: " + customer.statement());
+        LOGGER.debug("Custommer statement: " + customer.statement());
         assertEquals(customer.amountOfRentalMovies(), 2);
     }
 }
