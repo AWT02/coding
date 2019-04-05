@@ -1,26 +1,56 @@
 package org.fundacionjala.movies;
 
+/**
+ * This class represent a movie.
+ *
+ * @author carledriss
+ */
 public class Movie {
-    public static final int CHILDRENS = 2;
-    public static final int REGULAR = 0;
-    public static final int NEW_RELEASE = 1;
-    private String _title;
-    private int _priceCode;
+    /**
+     * Movie title.
+     **/
+    private final String title;
 
-    public Movie(String title, int priceCode) {
-        _title = title;
-        _priceCode = priceCode;
+    /**
+     * Price Code.
+     **/
+    private PriceCode priceCode;
+
+    /**
+     * Parameterized constructor.
+     *
+     * @param newTitle     movie title.
+     * @param newPriceCode movie price code.
+     */
+    public Movie(final String newTitle, final PriceCode newPriceCode) {
+        this.title = newTitle;
+        this.priceCode = newPriceCode;
     }
 
-    public int getPriceCode() {
-        return _priceCode;
+    /**
+     * Get price code.
+     *
+     * @return price code.
+     */
+    public PriceCode getPriceCode() {
+        return this.priceCode;
     }
 
-    public void setPriceCode(int arg) {
-        _priceCode = arg;
+    /**
+     * Set price code.
+     *
+     * @param arg new price code.
+     */
+    public void setPriceCode(final PriceCode arg) {
+        this.priceCode = arg;
     }
 
+    /**
+     * Get movie title.
+     *
+     * @return title.
+     */
     public String getTitle() {
-        return _title;
+        return this.title;
     }
 }

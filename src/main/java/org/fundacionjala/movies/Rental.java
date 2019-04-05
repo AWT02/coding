@@ -1,19 +1,38 @@
 package org.fundacionjala.movies;
 
-class Rental {
-    private Movie _movie;
-    private int _daysRented;
+/**
+ * This class represent a rent of a movie.
+ * @author carledriss
+ */
+public class Rental {
+    /** Movie rented. **/
+    private final Movie movie;
+    /** Days rented. **/
+    private final int daysRented;
 
-    public Rental(Movie movie, int daysRented) {
-        _movie = movie;
-        _daysRented = daysRented;
+    /**
+     * Parameterized constructor.
+     * @param newMovie      Movie to rent.
+     * @param newDaysRented number of days rented.
+     */
+    public Rental(final Movie newMovie, final int newDaysRented) {
+        this.movie = newMovie;
+        this.daysRented = newDaysRented;
     }
 
+    /**
+     * Get days rented.
+     * @return number of days rented.
+     **/
     public int getDaysRented() {
-        return _daysRented;
+        return this.daysRented;
     }
 
+    /**
+     * Get movie rented.
+     * @return movie rented.
+     **/
     public Movie getMovie() {
-        return _movie;
+        return this.movie;
     }
 }

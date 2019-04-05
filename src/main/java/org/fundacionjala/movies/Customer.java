@@ -3,60 +3,104 @@ package org.fundacionjala.movies;
 import java.util.Enumeration;
 import java.util.Vector;
 
-class Customer {
-    private String _name;
-    private Vector _rentals = new Vector();
+/**
+ * This class represent a customer.
+ * @author carledriss
+ */
+public class Customer {
+    /**
+     * Customer name.
+     */
+    private final String name;
 
-    public Customer(String name) {
-        _name = name;
+    /**
+     * Vector of movies rented by customer.
+     */
+    private final Vector rentals = new Vector();
+
+    /**
+     * Parameterized constructor.
+     * @param newName customer name.
+     */
+    public Customer(final String newName) {
+        this.name = newName;
     }
 
-    public void addRental(Rental arg) {
-        _rentals.addElement(arg);
+    /**
+     * Add rental.
+     * @param arg Rental.
+     **/
+    public void addRental(final Rental arg) {
+        this.rentals.addElement(arg);
     }
 
+    /**
+     * Get customer name.
+     * @return customer name.
+     **/
     public String getName() {
-        return _name;
+        return this.name;
     }
 
+    /**
+     * Get amount of rental movies by customer.
+     * @return rentals size
+     */
+    public int amountOfRentalMovies() {
+        return this.rentals.size();
+    }
+
+    /**
+     * To review.
+     * @return string message.
+     */
     public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
-        Enumeration rentals = _rentals.elements();
+        final Enumeration rentalList = this.rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
-        while (rentals.hasMoreElements()) {
+        while (rentalList.hasMoreElements()) {
             double thisAmount = 0;
-            Rental each = (Rental) rentals.nextElement();
+            final Rental each = (Rental) rentalList.nextElement();
             //determine amounts for each line
-            switch (each.getMovie().getPriceCode()) {
-                case Movie.REGULAR:
+            final PriceCode priceCode = each.getMovie().getPriceCode();
+            switch (priceCode) {
+                case REGULAR:
                     thisAmount += 2;
-                    if (each.getDaysRented() > 2)
-                        thisAmount += (each.getDaysRented() - 2) * 1.5;
+                    if (each.getDaysRented() > 2) {
+                        thisAmount += (each.getDaysRented() - 2)
+                                * priceCode.getFactor();
+                    }
                     break;
-                case Movie.NEW_RELEASE:
-                    thisAmount += each.getDaysRented() * 3;
+                case NEW_RELEASE:
+                    thisAmount += each.getDaysRented() * priceCode.getFactor();
                     break;
-                case Movie.CHILDRENS:
-                    thisAmount += 1.5;
-                    if (each.getDaysRented() > 3)
-                        thisAmount += (each.getDaysRented() - 3) * 1.5;
+                case CHILDREN:
+                    final int longRent = 3;
+                    thisAmount += priceCode.getFactor();
+                    if (each.getDaysRented() > longRent) {
+                        thisAmount += (each.getDaysRented() - longRent)
+                                * priceCode.getFactor();
+                    }
+                    break;
+                default:
                     break;
             }
             // add frequent renter points
             frequentRenterPoints++;
             // add bonus for a two day new release rental
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE)
+            if ((priceCode == PriceCode.NEW_RELEASE)
                     &&
-                    each.getDaysRented() > 1) frequentRenterPoints++;
+                    each.getDaysRented() > 1) {
+                frequentRenterPoints++;
+            }
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(thisAmount) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t"
+                    + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
         //add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) +
-                "\n";
+        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
         result += "You earned " + String.valueOf(frequentRenterPoints)
                 +
                 " frequent renter points";
