@@ -21,7 +21,7 @@ public class CustomerTest {
         final Customer customer = new Customer("Test");
         customer.addRental(new Rental(new Movie("The Revenant", PriceCode.NEW_RELEASE), 2));
         customer.addRental(new Rental(new Movie("Terminator", PriceCode.REGULAR), 2));
-        LOGGER.info(customer.statement());
+        LOGGER.fine("Custommer statement: " + customer.statement());
         assertEquals(customer.amountOfRentalMovies(), 2);
     }
 }
