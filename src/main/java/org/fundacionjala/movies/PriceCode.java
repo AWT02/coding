@@ -26,22 +26,6 @@ public enum PriceCode {
     }
 
     /**
-     * Search and get PriceCode that match with code.
-     * @param code price code.
-     * @return PriceCode that match.
-     * @throws IllegalArgumentException Invalid Price Code.
-     */
-    public static PriceCode getPiceCode(final int code)
-            throws IllegalArgumentException {
-        for (final PriceCode priceCode : PriceCode.values()) {
-            if (priceCode.getCode() == code) {
-                return priceCode;
-            }
-        }
-        throw new IllegalArgumentException("Invalid Price Code:" + code);
-    }
-
-    /**
      * Get price code.
      * @return code.
      */

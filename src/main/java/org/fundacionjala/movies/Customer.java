@@ -16,7 +16,7 @@ public class Customer {
     /**
      * Vector of movies rented by customer.
      */
-    private final List<Rental> rentals = new ArrayList<Rental>();
+    private final List<Rental> rentals = new ArrayList<>();
 
     /**
      * Parameterized constructor.
