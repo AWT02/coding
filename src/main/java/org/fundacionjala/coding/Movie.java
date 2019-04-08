@@ -21,10 +21,6 @@ public class Movie {
      */
     private int priceCode;
     /**
-     * this base cost for one day rent.
-     */
-    private MovieType movieType;
-    /**
      * this is a constructor.
      * @param title name of the movie
      * @param priceCode codigo del precio
@@ -38,7 +34,7 @@ public class Movie {
      * @param priceCode lo mismo que en la linea 30
      * @return its a factory that returns an instance
      */
-    public static MovieType createtype(final int priceCode) {
+    public MovieType createtype(final int priceCode) {
         switch (priceCode) {
             case 0:
                 return new Regular();
