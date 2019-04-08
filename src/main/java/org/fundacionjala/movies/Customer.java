@@ -24,7 +24,7 @@ public class Customer {
      */
     public Customer(final String newName) {
         this.name = newName;
-		this.rentals = new ArrayList<>();
+        this.rentals = new ArrayList<>();
     }
 
     /**
