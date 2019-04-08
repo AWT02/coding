@@ -2,23 +2,17 @@ package org.fundacionjala.movies;
 
 /**
  * This class represent a movie.
- *
  * @author carledriss
  */
-public class Movie {
-    /**
-     * Movie title.
-     **/
-    private final String title;
+public abstract class Movie {
+    /** Movie title. **/
+    protected String title;
 
-    /**
-     * Price Code.
-     **/
-    private PriceCode priceCode;
+    /** Price Code. **/
+    protected PriceCode priceCode;
 
     /**
      * Parameterized constructor.
-     *
      * @param newTitle     movie title.
      * @param newPriceCode movie price code.
      */
@@ -29,7 +23,6 @@ public class Movie {
 
     /**
      * Get price code.
-     *
      * @return price code.
      */
     public PriceCode getPriceCode() {
@@ -38,7 +31,6 @@ public class Movie {
 
     /**
      * Set price code.
-     *
      * @param arg new price code.
      */
     public void setPriceCode(final PriceCode arg) {
@@ -47,10 +39,25 @@ public class Movie {
 
     /**
      * Get movie title.
-     *
      * @return title.
      */
     public String getTitle() {
         return this.title;
     }
+
+    /**
+     * Movie detail for report rent.
+     * @param daysRented days rented.
+     * @return string
+     **/
+    public String getDetail(final int daysRented) {
+        return "\t" + this.title + "\t" + getPrice(daysRented) + "\n";
+    }
+
+    /**
+     * Get price if the movie is rented x days.
+     * @param daysRented int amount of days.
+     * @return price double
+     */
+    public abstract double getPrice(int daysRented);
 }
