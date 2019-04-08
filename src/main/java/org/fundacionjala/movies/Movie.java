@@ -30,14 +30,6 @@ public abstract class Movie {
     }
 
     /**
-     * Set price code.
-     * @param arg new price code.
-     */
-    public void setPriceCode(final PriceCode arg) {
-        this.priceCode = arg;
-    }
-
-    /**
      * Get movie title.
      * @return title.
      */
