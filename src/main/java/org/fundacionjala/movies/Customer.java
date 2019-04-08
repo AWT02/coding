@@ -16,7 +16,7 @@ public class Customer {
     /**
      * Vector of movies rented by customer.
      */
-    private final List<Rental> rentals = new ArrayList<>();
+    private final List<Rental> rentals;
 
     /**
      * Parameterized constructor.
@@ -24,6 +24,7 @@ public class Customer {
      */
     public Customer(final String newName) {
         this.name = newName;
+		this.rentals = new ArrayList<>();
     }
 
     /**
