@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.movies;
 
 import org.junit.Test;
 

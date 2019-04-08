@@ -5,7 +5,7 @@
 
 <!--
 
-  Checkstyle configuration that checks the sun coding conventions from:
+  Checkstyle configuration that checks the sun movies conventions from:
 
     - the Java Language Specification at
       http://java.sun.com/docs/books/jls/second_edition/html/index.html
@@ -159,7 +159,7 @@
         <module name="RightCurly"/>
 
 
-        <!-- Checks for common coding problems               -->
+        <!-- Checks for common movies problems               -->
         <!-- See http://checkstyle.sf.net/config_coding.html -->
         <!--<module name="AvoidInlineConditionals"/>-->
         <module name="EmptyStatement"/>
