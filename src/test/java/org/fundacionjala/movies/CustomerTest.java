@@ -18,8 +18,6 @@ public class CustomerTest {
     private static final Logger LOGGER =
             Logger.getLogger(CustomerTest.class.getName());
 
-    private static final int THREE = 3;
-    private static final int FOUR = 4;
     private Customer customer;
     private Customer customer1;
 
@@ -27,26 +25,29 @@ public class CustomerTest {
     /** Default customer creation. **/
     @Before
     public void setup() {
+        final int three = 3;
         this.customer = new Customer("Test");
-        this.customer.addRental(new Rental(new NewMovie("The Revenant"), this.THREE));
-        this.customer.addRental(new Rental(new RegularMovie("Terminator"), this.THREE));
+        this.customer.addRental(new Rental(new NewMovie("The Revenant"), three));
+        this.customer.addRental(new Rental(new RegularMovie("Terminator"),
+                three));
         this.customer.addRental(new Rental(new ChildrenMovie("Frozzen"),
-                this.FOUR));
+                three + 1));
         this.customer1 = new Customer("Test basicCustomer");
         this.customer1.addRental(new Rental(new NewMovie("The Revenant"), 1));
         this.customer1.addRental(new Rental(new RegularMovie("Terminator"), 1));
         this.customer1.addRental(new Rental(new ChildrenMovie("Frozzen"), 1));
-        LOGGER.debug("Custommer statement: " + this.customer.getRentalDetails());
-        LOGGER.debug("Custommer statement: " + this.customer1.getRentalDetails());
+        LOGGER.debug("Custommer detail: " + this.customer.getRentalDetails());
+        LOGGER.debug("Custommer detail: " + this.customer1.getRentalDetails());
     }
 
     /** Verify rent some videos. */
     @Test
     public void testRentalPrice() {
+        final int three = 3;
         final double expectedTotal0 = 12.0;
         final double expectedTotal1 = 6.5;
-        assertEquals(this.customer.amountOfRentalMovies(), this.THREE);
-        assertEquals(this.customer1.amountOfRentalMovies(), this.THREE);
+        assertEquals(this.customer.amountOfRentalMovies(), three);
+        assertEquals(this.customer1.amountOfRentalMovies(), three);
         assertEquals(expectedTotal0, this.customer.getTotalRentPrice(), DELTA);
         assertEquals(expectedTotal1, this.customer1.getTotalRentPrice(), DELTA);
     }
@@ -54,8 +55,9 @@ public class CustomerTest {
     /** Verify frequent points. **/
     @Test
     public void testFrequentPoints() {
-        assertEquals(this.THREE, this.customer1.getFrequentRenterPoints());
-        assertEquals(this.FOUR, this.customer.getFrequentRenterPoints());
+        final int three = 3;
+        assertEquals(three, this.customer1.getFrequentRenterPoints());
+        assertEquals(three + 1, this.customer.getFrequentRenterPoints());
     }
 
     /** Verify rent detail. **/
