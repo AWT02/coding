@@ -15,6 +15,7 @@ public class MovieTest {
         final Customer customer = new Customer("Test");
         customer.addRental(new Rental(new Movie("The Revenant", 1), 2));
         customer.addRental(new Rental(new Movie("Terminator", 0), 2));
+        customer.addRental(new Rental(new Movie("50 sombras de Grey", 2), 10));
         System.out.println(customer.statement());
     }
 
