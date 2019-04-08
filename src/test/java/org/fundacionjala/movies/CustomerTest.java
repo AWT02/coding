@@ -18,8 +18,8 @@ public class CustomerTest {
     private static final Logger LOGGER =
             Logger.getLogger(CustomerTest.class.getName());
 
-    private final int three = 3;
-    private final int four = 4;
+    private static final int THREE = 3;
+    private static final int FOUR = 4;
     private Customer customer;
     private Customer customer1;
 
@@ -28,10 +28,10 @@ public class CustomerTest {
     @Before
     public void setup() {
         this.customer = new Customer("Test");
-        this.customer.addRental(new Rental(new NewMovie("The Revenant"), this.three));
-        this.customer.addRental(new Rental(new RegularMovie("Terminator"), this.three));
+        this.customer.addRental(new Rental(new NewMovie("The Revenant"), this.THREE));
+        this.customer.addRental(new Rental(new RegularMovie("Terminator"), this.THREE));
         this.customer.addRental(new Rental(new ChildrenMovie("Frozzen"),
-                this.four));
+                this.FOUR));
         this.customer1 = new Customer("Test basicCustomer");
         this.customer1.addRental(new Rental(new NewMovie("The Revenant"), 1));
         this.customer1.addRental(new Rental(new RegularMovie("Terminator"), 1));
@@ -45,8 +45,8 @@ public class CustomerTest {
     public void testRentalPrice() {
         final double expectedTotal0 = 12.0;
         final double expectedTotal1 = 6.5;
-        assertEquals(this.customer.amountOfRentalMovies(), this.three);
-        assertEquals(this.customer1.amountOfRentalMovies(), this.three);
+        assertEquals(this.customer.amountOfRentalMovies(), this.THREE);
+        assertEquals(this.customer1.amountOfRentalMovies(), this.THREE);
         assertEquals(expectedTotal0, this.customer.getTotalRentPrice(), DELTA);
         assertEquals(expectedTotal1, this.customer1.getTotalRentPrice(), DELTA);
     }
@@ -54,8 +54,8 @@ public class CustomerTest {
     /** Verify frequent points. **/
     @Test
     public void testFrequentPoints() {
-        assertEquals(this.three, this.customer1.getFrequentRenterPoints());
-        assertEquals(this.four, this.customer.getFrequentRenterPoints());
+        assertEquals(this.THREE, this.customer1.getFrequentRenterPoints());
+        assertEquals(this.FOUR, this.customer.getFrequentRenterPoints());
     }
 
     /** Verify rent detail. **/
