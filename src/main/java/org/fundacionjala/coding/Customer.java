@@ -3,9 +3,12 @@ package org.fundacionjala.coding;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class should be called VideoStore instead of costumner
+ */
 public class Customer {
     private final String name;
-    public List<Rental> orderList = new ArrayList<Rental>();
+    private List<Rental> orderList = new ArrayList<>();
 
     public Customer(final String name) {
         this.name = name;
