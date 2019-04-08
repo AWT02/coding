@@ -1,13 +1,14 @@
 package org.fundacionjala.coding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Customer {
-    private final String _name;
-    public ArrayList<Rental> orderList = new ArrayList<Rental>();
+    private final String name;
+    public List<Rental> orderList = new ArrayList<Rental>();
 
     public Customer(final String name) {
-        this._name = name;
+        this.name = name;
     }
 
     public void addRental(final Rental arg) {
@@ -15,7 +16,7 @@ public class Customer {
     }
 
     public String getName() {
-        return this._name;
+        return this.name;
     }
 
     public double orderCost(){
