@@ -7,22 +7,23 @@ public abstract class MovieType {
     /**
      * this CHILDREN PRICE CODE.
      */
-    private int PRICE_CODE;
+    private int priceCode;
     /**
      * this base cost for one day rent.
      */
-    private double BASE_COST;
+    private double baseCost;
     /**
      * this is a constructor.
-     * @param code
-     * @param cost
+     * @param code asi nomas
+     * @param cost asi nomas
      */
     MovieType(final int code, final double cost) {
-        this.PRICE_CODE = code;
-        this.BASE_COST = cost;
+        this.priceCode = code;
+        this.baseCost = cost;
     }
     /**
      * @return this is an abstract method.
+     * @param days asisingo
      */
     public abstract double calculatePay(int days);
 
