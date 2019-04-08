@@ -18,24 +18,37 @@ public class Customer {
         return this._name;
     }
 
+    public double orderCost(){
+        double sum=0;
+        for (Rental rent:orderList){
+            sum+=rent.getrentCost();
+        }
+        return sum;
+    }
+
+    public int frequentRenderPoints(){
+        int frequentRenderPoints=0;
+        for (Rental rent:orderList){
+            frequentRenderPoints+=1;
+            if(rent.getMovie().getPriceCode()==1 && rent.daysRented>1){
+                frequentRenderPoints+=1;
+            }
+        }
+        return frequentRenderPoints;
+    }
+
     public String statement() {
         String result = "Rental Record for " + this.getName() + "\n";
         for (final Rental rent : this.orderList) {
-            //show figures for this rental
-            //rent.getrentCost();
-            //System.out.println(rent.getrentCost());
-
             result += "\t" + rent.getMovie().getTitle() + "\t" + String.valueOf(rent.getrentCost()) + "\n";
-            System.out.println(result);
-
         }
-
         //add footer lines
-//        result += "Amount owed is " + String.valueOf(5) +
-//                "\n";
-//        result += "You earned " + String.valueOf(3)
-//                +
-//                " frequent renter points";
+        result += "Amount owed is " + String.valueOf(this.orderCost()) +
+                "\n";
+        result += "You earned " + String.valueOf(this.frequentRenderPoints())
+                +
+               " frequent renter points";
+
         return result;
     }
 

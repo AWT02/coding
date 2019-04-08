@@ -1,5 +1,7 @@
 package org.fundacionjala.coding;
 
+import org.fundacionjala.coding.org.fundacionjala.coding.movietypes.MovieType;
+
 class Rental {
 
     public Movie movie;

@@ -1,5 +1,10 @@
 package org.fundacionjala.coding;
 
+import org.fundacionjala.coding.org.fundacionjala.coding.movietypes.Childrens;
+import org.fundacionjala.coding.org.fundacionjala.coding.movietypes.MovieType;
+import org.fundacionjala.coding.org.fundacionjala.coding.movietypes.NewRelease;
+import org.fundacionjala.coding.org.fundacionjala.coding.movietypes.Regular;
+
 /**
  * @author Carlos Richter.
  */
