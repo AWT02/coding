@@ -1,10 +1,15 @@
 package org.fundacionjala.coding;
 
-import org.fundacionjala.coding.org.fundacionjala.coding.movietypes.MovieType;
+
 import org.junit.Test;
 
+/**
+ * @author carlos richter.
+ */
 public class MovieTest {
-
+    /**
+     * some coment.
+     */
     @Test
     public void main() {
         final Customer customer = new Customer("Test");
