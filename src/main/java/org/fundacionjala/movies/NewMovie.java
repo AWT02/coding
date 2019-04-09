@@ -13,7 +13,7 @@ public class NewMovie extends Movie {
 
     @Override
     public double getPrice(final int daysRented) {
-        final int factor = 3;
+        final double factor = 3;
         return daysRented * factor;
     }
 

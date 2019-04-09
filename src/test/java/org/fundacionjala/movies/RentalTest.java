@@ -13,7 +13,7 @@ public class RentalTest {
     public void testGetDetail() {
         final Rental rental = new Rental(new RegularMovie("Terminator"), 2);
         assertTrue(rental.getDetail().contains(rental.getMovie().getTitle()));
-        assertEquals("\tTerminator\t2.0\n", rental.getDetail());
+        assertEquals("\tTerminator\t2.0\r\n", rental.getDetail());
     }
 
     /** this test verify if rent save rented days correctly. **/

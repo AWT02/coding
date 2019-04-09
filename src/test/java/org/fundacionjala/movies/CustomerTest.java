@@ -85,12 +85,16 @@ public class CustomerTest {
     /** Verify rent detail. **/
     @Test
     public void testDetail() {
-        assertEquals("Rental Record for Test\n\tThe Revenant\t9.0\n\tTerminator"
-                        .concat("\t1.5\n\tFrozzen\t1.5\nAmount owed is 12.0")
-                        .concat("\nYou earned 4 frequent renter points"),
+        assertEquals(("Rental Record for Test\n\tThe Revenant\t9.0\r\n")
+                        .concat("\tTerminator\t1.5\r\n")
+                        .concat("\tFrozzen\t1.5\r\n")
+                        .concat("Amount owed is 12.0\n")
+                        .concat("You earned 4 frequent renter points"),
                 this.customer.getRentalDetails());
-        assertEquals("Rental Record for Test basicCustomer\n\tThe Revenant\t"
-                        .concat("3.0\n\tTerminator\t2.0\n\tFrozzen\t1.5\n")
+        assertEquals("Rental Record for Test basicCustomer\n"
+                        .concat("\tThe Revenant\t3.0\r\n")
+                        .concat("\tTerminator\t2.0\r\n")
+                        .concat("\tFrozzen\t1.5\r\n")
                         .concat("Amount owed is 6.5\n")
                         .concat("You earned 3 frequent renter points"),
                 this.customer1.getRentalDetails());

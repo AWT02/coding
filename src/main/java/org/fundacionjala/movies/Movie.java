@@ -30,7 +30,7 @@ public abstract class Movie {
      * @return string
      **/
     public String getDetail(final int daysRented) {
-        return String.format("\t%s\t%s\n", this.title,
+        return String.format("\t%s\t%s%n", this.title,
                 String.valueOf(getPrice(daysRented)));
     }
 
