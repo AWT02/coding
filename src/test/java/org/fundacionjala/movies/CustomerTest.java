@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Test for {@link Customer}.
@@ -84,19 +85,35 @@ public class CustomerTest {
 
     /** Verify rent detail. **/
     @Test
-    public void testDetail() {
-        assertEquals(("Rental Record for Test\n\tThe Revenant\t9.0\r\n")
-                        .concat("\tTerminator\t1.5\r\n")
-                        .concat("\tFrozzen\t1.5\r\n")
-                        .concat("Amount owed is 12.0\n")
-                        .concat("You earned 4 frequent renter points"),
-                this.customer.getRentalDetails());
-        assertEquals("Rental Record for Test basicCustomer\n"
-                        .concat("\tThe Revenant\t3.0\r\n")
-                        .concat("\tTerminator\t2.0\r\n")
-                        .concat("\tFrozzen\t1.5\r\n")
-                        .concat("Amount owed is 6.5\n")
-                        .concat("You earned 3 frequent renter points"),
-                this.customer1.getRentalDetails());
+    public void testDetailForMoreThan1DayRented() {
+        assertTrue(this.customer.getRentalDetails()
+                .contains("Rental Record for Test"));
+        assertTrue(this.customer.getRentalDetails()
+                .contains("The Revenant\t9.0"));
+        assertTrue(this.customer.getRentalDetails()
+                .contains("Terminator\t1.5"));
+        assertTrue(this.customer.getRentalDetails()
+                .contains("Frozzen\t1.5"));
+        assertTrue(this.customer.getRentalDetails()
+                .contains("Amount owed is 12.0"));
+        assertTrue(this.customer.getRentalDetails()
+                .contains("You earned 4 frequent renter points"));
+    }
+
+    /** Verify rent detail. **/
+    @Test
+    public void testDetailFor1DayRented() {
+        assertTrue(this.customer1.getRentalDetails()
+                .contains("Rental Record for Test basicCustomer"));
+        assertTrue(this.customer1.getRentalDetails()
+                .contains("The Revenant\t3.0"));
+        assertTrue(this.customer1.getRentalDetails()
+                .contains("Terminator\t2.0"));
+        assertTrue(this.customer1.getRentalDetails()
+                .contains("Frozzen\t1.5"));
+        assertTrue(this.customer1.getRentalDetails()
+                .contains("Amount owed is 6.5"));
+        assertTrue(this.customer1.getRentalDetails()
+                .contains("You earned 3 frequent renter points"));
     }
 }
