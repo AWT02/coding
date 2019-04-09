@@ -7,6 +7,7 @@ package org.fundacionjala.movies;
 public class Rental {
     /** Movie rented. **/
     private final Movie movie;
+
     /** Days rented. **/
     private final int daysRented;
 
@@ -41,8 +42,7 @@ public class Rental {
      * @return boolean
      */
     public boolean hasExtraPoint() {
-        return (this.movie.getPriceCode() == PriceCode.NEW_RELEASE)
-                && this.daysRented > 1;
+        return this.movie.hasExtraPoint(this.daysRented);
     }
 
     /**

@@ -40,37 +40,59 @@ public class CustomerTest {
         LOGGER.debug("Custommer detail: " + this.customer1.getRentalDetails());
     }
 
-    /** Verify rent some videos. */
+    /** Verify rent some videos for 1 day. */
     @Test
-    public void testRentalPrice() {
-        final int three = 3;
-        final double expectedTotal0 = 12.0;
-        final double expectedTotal1 = 6.5;
-        assertEquals(this.customer.amountOfRentalMovies(), three);
-        assertEquals(this.customer1.amountOfRentalMovies(), three);
-        assertEquals(expectedTotal0, this.customer.getTotalRentPrice(), DELTA);
-        assertEquals(expectedTotal1, this.customer1.getTotalRentPrice(), DELTA);
+    public void testRentalPriceFor1DayRented() {
+        final double expectedTotal = 6.5;
+        assertEquals(expectedTotal, this.customer1.getTotalRentPrice(), DELTA);
     }
 
-    /** Verify frequent points. **/
+    /** Verify rent some videos for more than 1 day. */
     @Test
-    public void testFrequentPoints() {
+    public void testRentalPriceForMoreThan1Day() {
+        final double expectedTotal = 12.0;
+        assertEquals(expectedTotal, this.customer.getTotalRentPrice(), DELTA);
+    }
+
+    /** Verify rent amount videos for 1 day rented. */
+    @Test
+    public void testAmountOfRentalsFor1DayRented() {
+        final int three = 3;
+        assertEquals(this.customer1.amountOfRentalMovies(), three);
+    }
+
+    /** Verify rent amount videos for more than 1 day rented. */
+    @Test
+    public void testAmountOfRentalsForMoreThan1DayRented() {
+        final int three = 3;
+        assertEquals(this.customer.amountOfRentalMovies(), three);
+    }
+
+    /** Verify frequent points for 1 day rented. **/
+    @Test
+    public void testFrequentPointsFor1dayRented() {
         final int three = 3;
         assertEquals(three, this.customer1.getFrequentRenterPoints());
+    }
+
+    /** Verify frequent points for more than 1 day rented. **/
+    @Test
+    public void testFrequentPointsForMoreThan1Day() {
+        final int three = 3;
         assertEquals(three + 1, this.customer.getFrequentRenterPoints());
     }
 
     /** Verify rent detail. **/
     @Test
     public void testDetail() {
-        assertEquals("Rental Record for Test\n\tThe Revenant\t9.0\n"
-                        + "\tTerminator\t1.5\n\tFrozzen\t1.5\nAmount owed is "
-                        + "12.0\nYou earned 4 frequent renter points",
+        assertEquals("Rental Record for Test\n\tThe Revenant\t9.0\n\tTerminator"
+                        .concat("\t1.5\n\tFrozzen\t1.5\nAmount owed is 12.0")
+                        .concat("\nYou earned 4 frequent renter points"),
                 this.customer.getRentalDetails());
         assertEquals("Rental Record for Test basicCustomer\n\tThe Revenant\t"
-                        + "3.0\n\tTerminator\t2.0\n\tFrozzen\t1.5\n"
-                        + "Amount owed is 6.5\n"
-                        + "You earned 3 frequent renter points",
+                        .concat("3.0\n\tTerminator\t2.0\n\tFrozzen\t1.5\n")
+                        .concat("Amount owed is 6.5\n")
+                        .concat("You earned 3 frequent renter points"),
                 this.customer1.getRentalDetails());
     }
 }

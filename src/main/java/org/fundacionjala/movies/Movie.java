@@ -8,25 +8,12 @@ public abstract class Movie {
     /** Movie title. **/
     protected String title;
 
-    /** Price Code. **/
-    protected PriceCode priceCode;
-
     /**
      * Parameterized constructor.
-     * @param newTitle     movie title.
-     * @param newPriceCode movie price code.
+     * @param newTitle movie title.
      */
-    public Movie(final String newTitle, final PriceCode newPriceCode) {
+    public Movie(final String newTitle) {
         this.title = newTitle;
-        this.priceCode = newPriceCode;
-    }
-
-    /**
-     * Get price code.
-     * @return price code.
-     */
-    public PriceCode getPriceCode() {
-        return this.priceCode;
     }
 
     /**
@@ -43,7 +30,8 @@ public abstract class Movie {
      * @return string
      **/
     public String getDetail(final int daysRented) {
-        return "\t" + this.title + "\t" + getPrice(daysRented) + "\n";
+        return String.format("\t%s\t%s\n", this.title,
+                String.valueOf(getPrice(daysRented)));
     }
 
     /**
@@ -52,4 +40,11 @@ public abstract class Movie {
      * @return price double
      */
     public abstract double getPrice(int daysRented);
+
+    /**
+     * For new movie and more than 1 day, have extra point.
+     * @param daysRented amount of days rented.
+     * @return boolean
+     */
+    public abstract boolean hasExtraPoint(int daysRented);
 }

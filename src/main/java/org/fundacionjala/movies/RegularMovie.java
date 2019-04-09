@@ -8,12 +8,17 @@ public class RegularMovie extends Movie {
      * @param newTitle movie title.
      */
     public RegularMovie(final String newTitle) {
-        super(newTitle, PriceCode.REGULAR);
+        super(newTitle);
     }
 
     @Override
     public double getPrice(final int daysRented) {
-        return daysRented > 2 ? ((daysRented - 2) * this.priceCode.getFactor())
-                : 2;
+        final double factor = 1.5;
+        return daysRented > 2 ? ((daysRented - 2) * factor) : 2;
+    }
+
+    @Override
+    public boolean hasExtraPoint(final int daysRented) {
+        return false;
     }
 }

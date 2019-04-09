@@ -8,11 +8,17 @@ public class NewMovie extends Movie {
      * @param newTitle movie title.
      */
     public NewMovie(final String newTitle) {
-        super(newTitle, PriceCode.NEW_RELEASE);
+        super(newTitle);
     }
 
     @Override
     public double getPrice(final int daysRented) {
-        return daysRented * this.priceCode.getFactor();
+        final int factor = 3;
+        return daysRented * factor;
+    }
+
+    @Override
+    public boolean hasExtraPoint(final int daysRented) {
+        return daysRented > 1;
     }
 }

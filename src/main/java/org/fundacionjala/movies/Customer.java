@@ -8,14 +8,10 @@ import java.util.List;
  * @author carledriss
  */
 public class Customer {
-    /**
-     * Customer name.
-     */
+    /** Customer name. */
     private final String name;
 
-    /**
-     * Vector of movies rented by customer.
-     */
+    /** Vector of movies rented by customer. */
     private final List<Rental> rentals;
 
     /**
@@ -77,8 +73,7 @@ public class Customer {
         }
         details.append("Amount owed is ")
                 .append(getTotalRentPrice())
-                .append("\n")
-                .append("You earned ")
+                .append("\nYou earned ")
                 .append(getFrequentRenterPoints())
                 .append(" frequent renter points");
         return details.toString();
