@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.marines.movies;
 
 import org.junit.Test;
 

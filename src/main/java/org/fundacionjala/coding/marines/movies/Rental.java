@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.marines.movies;
 
 /**
  * This class represent a rent of a movie.
