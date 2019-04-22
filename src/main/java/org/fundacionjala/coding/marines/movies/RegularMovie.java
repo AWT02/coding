@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.marines.movies;
 
 /** Represent a movie of type regular. */
 public class RegularMovie extends Movie {

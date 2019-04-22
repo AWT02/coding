@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.marines.movies;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +85,7 @@ public class Customer {
      */
     public int getFrequentRenterPoints() {
         return this.rentals.size() + this.rentals.stream()
-                .filter(i -> i.hasExtraPoint())
+                .filter(Rental::hasExtraPoint)
                 .mapToInt(i -> 1).sum();
     }
 }
