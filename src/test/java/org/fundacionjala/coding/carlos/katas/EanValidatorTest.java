@@ -13,7 +13,7 @@ public class EanValidatorTest {
      * valid case.
      */
     @Test
-    public void test_one() {
+    public void testone() {
         assertTrue(EanValidator.validate("9783815820865"));
     }
 
@@ -21,7 +21,7 @@ public class EanValidatorTest {
      * Invalid Case.
      */
     @Test
-    public void test_two() {
+    public void testtwo() {
         assertFalse(EanValidator.validate("9783815820864"));
     }
 
@@ -29,7 +29,7 @@ public class EanValidatorTest {
      * valid case.
      */
     @Test
-    public void test_three() {
+    public void testthree() {
         assertTrue(EanValidator.validate("9783827317100"));
     }
 }
