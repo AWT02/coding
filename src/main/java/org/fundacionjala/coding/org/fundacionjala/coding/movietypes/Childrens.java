@@ -28,7 +28,7 @@ public class Childrens extends MovieType {
         super(CHILDRENS, BASE_COST);
     }
     /**
-     * this is an implementation of an abstract method.
+     * {@inheritDoc}.
      */
     @Override
     public double calculatePay(final int days) {

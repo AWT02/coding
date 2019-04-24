@@ -14,12 +14,13 @@ public class Customer {
     /**
      * list of rentals.
      */
-    private List<Rental> orderList = new ArrayList<>();
+    private List<Rental> orderList;
 
     /**
-     * @param name is the namme of the costumer
+     * @param name is the name of the customer
      */
     public Customer(final String name) {
+        orderList= new ArrayList<>();
         this.name = name;
     }
 

@@ -1,6 +1,6 @@
 package org.fundacionjala.coding.org.fundacionjala.coding.movietypes;
 /**
- * @author Carlos Richter
+ * Simple description.
  */
 
 public abstract class MovieType {
@@ -14,8 +14,8 @@ public abstract class MovieType {
     private double baseCost;
     /**
      * this is a constructor.
-     * @param code asi nomas
-     * @param cost asi nomas
+     * @param code code
+     * @param cost cost
      */
     MovieType(final int code, final double cost) {
         this.priceCode = code;
