@@ -3,9 +3,11 @@ package org.fundacionjala.coding.carlos.katas;
 /**
  * THIS IS KATA FROM CODEWARS CALLED EAN VALIDATOR.
  */
-public final class EANValidator {
-
-    EANValidator() {
+public final class EanValidator {
+    /**
+     * This was required for sonarcloud check fix.
+     */
+    EanValidator() {
         throw new IllegalStateException("Utility class");
     }
 
@@ -18,21 +20,23 @@ public final class EANValidator {
         int sumImpares = 0;
         int sum = 0;
         final int multiplier = 3;
+        final int ten = 10;
         final boolean result;
         for (int i = 0; i < eanCode.length() - 1; i++) {
             if (i % 2 == 0) {
                 sumPares += Integer.parseInt(String.valueOf(eanCode.charAt(i)));
             } else {
-                sumImpares += multiplier * Integer.parseInt(String.valueOf(eanCode.charAt(i)));
+                sumImpares += multiplier
+                        * Integer.parseInt(String.valueOf(eanCode.charAt(i)));
             }
         }
         sum = sumImpares + sumPares;
         final String ean = String.valueOf(eanCode.charAt(12));
         final String eanown;
-        if (sum % 10 == 0) {
+        if (sum % ten == 0) {
             eanown = "0";
         } else {
-            final int checksum = 10 - (sum % 10);
+            final int checksum = ten - (sum % ten);
             eanown = checksum + "";
         }
         if (ean.equals(eanown)) {
