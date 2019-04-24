@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.Carlos.katas;
+package org.fundacionjala.coding.carlos.katas;
 
 import org.junit.Test;
 

@@ -1,9 +1,14 @@
-package org.fundacionjala.coding.Carlos.katas;
+package org.fundacionjala.coding.carlos.katas;
 
 /**
  * THIS IS KATA FROM CODEWARS CALLED EAN VALIDATOR.
  */
-class EANValidator {
+public final class EANValidator {
+
+    EANValidator() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * @param eanCode is the ean code.
      * @return true or false
