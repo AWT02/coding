@@ -8,24 +8,22 @@ import static org.junit.Assert.assertTrue;
 /** Test for {@link EANValidator}. */
 public class EANValidatorTest {
 
+    /** This test validate valid ean codes with checksum greater than zero. **/
     @Test
-    public void testValidateEANCode() {
+    public void testValidateValidEANCodeWithChesumGreaterThanZero() {
         assertTrue(EANValidator.validate("4003301018398"));
-    }
-
-
-    @Test
-    public void test_01() {
         assertTrue(EANValidator.validate("9783815820865"));
     }
 
+    /** This test validate invalid ean code. **/
     @Test
-    public void test_02() {
+    public void testValidateInvalidEANCode() {
         assertFalse(EANValidator.validate("9783815820864"));
     }
 
+    /** This test validate valid ean code for checksum zero. **/
     @Test
-    public void test_03() {
+    public void testValidateValidEANCodeWithChesumZero() {
         assertTrue(EANValidator.validate("9783827317100"));
     }
 }
