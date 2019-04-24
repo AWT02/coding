@@ -31,4 +31,5 @@ EANValidator.validate("4003301018398") // true
 EANValidator.validate("4003301018392") // false
 
 ![kata running](Screen1.png)
-![kata running](Screen2.png)
+
+![kata running](screen2.png)
