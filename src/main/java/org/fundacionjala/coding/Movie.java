@@ -45,6 +45,7 @@ public class Movie {
             default:
                 break;
         }
+        //A regular movie should be returned by default
         return null;
     }
     /**
