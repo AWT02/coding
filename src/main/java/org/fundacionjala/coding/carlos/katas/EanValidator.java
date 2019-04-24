@@ -7,8 +7,7 @@ public final class EanValidator {
     /**
      * This was required for sonarcloud check fix.
      */
-    EanValidator() {
-        throw new IllegalStateException("Utility class");
+    private EanValidator() {
     }
 
     /**
