@@ -1,6 +1,5 @@
-package org.fundacionjala.coding.Carlos;
+package org.fundacionjala.coding.Carlos.katas;
 
-import org.fundacionjala.coding.Carlos.katas.EANValidator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
