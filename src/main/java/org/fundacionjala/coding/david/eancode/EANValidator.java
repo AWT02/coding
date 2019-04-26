@@ -21,19 +21,12 @@ public final class EANValidator {
      */
     public static boolean validate(final String eanCode) {
         String[] part = eanCode.split("");
-        int aux = 0;
-        int checksum = 0;
-
+        int sum = 0;
         for (int i = 1; i < eanCode.length(); i++) {
-            if (i % 2 == 0) {
-                aux = (Integer.parseInt(part[i - 1]) * THREE) + aux;
-            } else {
-                aux = Integer.parseInt(part[i - 1]) + aux;
-            }
+            int value = Integer.parseInt(part[i - 1]);
+            sum += i % 2 == 0 ? value * THREE : value;
         }
-        if (aux % TEN != 0) {
-            checksum = TEN - (aux % TEN);
-        }
+        int checksum = sum % TEN != 0 ? TEN - sum % TEN : 0;
         return checksum == Integer.parseInt(part[eanCode.length() - 1]);
     }
 }
