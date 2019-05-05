@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Test for {@link Rental}
+ * Test for {@link Rental}.
  */
 public class RentalTest {
 
@@ -54,16 +54,18 @@ public class RentalTest {
      **/
     @Test
     public void testGetNewRealeaseRentedDays() {
-        final Rental rental = new Rental(new NewRelease("GOT"), 7);
-        assertEquals(7, rental.getDaysRented());
+        final int sevenDays = 7;
+        final Rental rental = new Rental(new NewRelease("GOT"), sevenDays);
+        assertEquals(sevenDays, rental.getDaysRented());
     }
     /**
      * Days rented according to children rental specification.
      **/
     @Test
     public void testGetChildrenRentedDays() {
-        final Rental rental = new Rental(new Children("DBZ"), 10);
-        assertEquals(10, rental.getDaysRented());
+        final int tenDays = 10;
+        final Rental rental = new Rental(new Children("DBZ"), tenDays);
+        assertEquals(tenDays, rental.getDaysRented());
     }
 
 }

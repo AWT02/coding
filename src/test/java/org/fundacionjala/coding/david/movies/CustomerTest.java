@@ -28,11 +28,11 @@ public class CustomerTest {
      */
     @Before
     public void randomOrders() {
-
+        final int three = 3;
         this.favoriteCustomer = new Customer("Favorite customer");
-        this.favoriteCustomer.addRental(new Rental(new NewRelease("GOT"), 3));
-        this.favoriteCustomer.addRental(new Rental(new Regular("Terminator"), 3));
-        this.favoriteCustomer.addRental(new Rental(new Children("DBZ"), 4));
+        this.favoriteCustomer.addRental(new Rental(new NewRelease("GOT"), three));
+        this.favoriteCustomer.addRental(new Rental(new Regular("Terminator"), three));
+        this.favoriteCustomer.addRental(new Rental(new Children("DBZ"), three + 1));
 
         this.regularCustomer = new Customer("Regular customer");
         this.regularCustomer.addRental(new Rental(new NewRelease("GOT"), 1));
