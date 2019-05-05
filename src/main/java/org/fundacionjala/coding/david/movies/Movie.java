@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.movies;
+package org.fundacionjala.coding.david.movies;
 /**
  * Handle movie retail.
  */
@@ -29,10 +29,10 @@ class Movie {
     /**
      * Set a price code.
      *
-     * @param arg  to set a specific price code
+     * @param code  to set a specific price code
      */
-    void setPriceCode(final int arg) {
-        this.priceCode = arg;
+    void setPriceCode(final int code) {
+        this.priceCode = code;
     }
     /**
      * Get movie title.

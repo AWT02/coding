@@ -1,8 +1,8 @@
-package org.fundacionjala.coding.movies;
+package org.fundacionjala.coding.david.movies;
 
 import java.util.List;
 
-public class children extends MovieType {
+public class Regular extends MovieType{
     /**
      * (@inheritDoc).
      * @param each
@@ -12,9 +12,9 @@ public class children extends MovieType {
      */
     @Override
     public Double getAmount(final Rental each, final double thisAmount, final List<Double> numbers){
-        double amount = thisAmount + numbers.get(0);
-        if (each.getDaysRented() > numbers.get(1)) {
-            amount += (each.getDaysRented() - numbers.get(1)) * numbers.get(0);
+        double amount = thisAmount + 2;
+        if (each.getDaysRented() > 2) {
+            amount += (each.getDaysRented() - 2) * numbers.get(0);
         }
         return amount;
     }

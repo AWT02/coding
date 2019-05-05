@@ -1,9 +1,8 @@
-package org.fundacionjala.coding.movies;
+package org.fundacionjala.coding.david.movies;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Test for {@link Movie}.

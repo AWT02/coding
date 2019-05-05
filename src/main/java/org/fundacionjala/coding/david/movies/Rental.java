@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.movies;
+package org.fundacionjala.coding.david.movies;
 /**
  * Handle rental on movies.
  */
