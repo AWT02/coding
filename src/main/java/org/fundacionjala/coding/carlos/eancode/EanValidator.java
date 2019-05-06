@@ -38,12 +38,7 @@ public final class EanValidator {
             final int checksum = ten - (sum % ten);
             eanown = checksum + "";
         }
-        if (ean.equals(eanown)) {
-            result = true;
-        } else {
-            result = false;
-        }
+        result = (ean.equals(eanown)) ? true : false;
         return result;
     }
-
 }
