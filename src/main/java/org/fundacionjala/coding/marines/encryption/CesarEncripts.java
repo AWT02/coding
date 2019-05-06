@@ -25,7 +25,11 @@ public class CesarEncripts {
             final StringBuilder encriptedText = new StringBuilder("");
             for (final char ch : inUpper.toCharArray()) {
                 final int index = movedAlphabet.indexOf(ch);
-                encriptedText.append(alphabet.charAt(index));
+                if (index > -1) {
+                    encriptedText.append(alphabet.charAt(index));
+                } else {
+                    encriptedText.append(ch);
+                }
             }
             return encriptedText.toString();
         }
@@ -45,7 +49,11 @@ public class CesarEncripts {
             final StringBuilder decriptedText = new StringBuilder("");
             for (final char ch : inUpper.toCharArray()) {
                 final int index = alphabet.indexOf(ch);
-                decriptedText.append(movedAlphabet.charAt(index));
+                if (index > -1) {
+                    decriptedText.append(movedAlphabet.charAt(index));
+                } else {
+                    decriptedText.append(ch);
+                }
             }
             return decriptedText.toString();
         }
@@ -65,5 +73,6 @@ public class CesarEncripts {
     public static void main(final String[] args) {
         System.out.println(CesarEncripts.decript("KROD", 3));
         System.out.println(CesarEncripts.encript("HOLA", 3));
+        System.out.println(CesarEncripts.encript("HOLA fundacion jala", 3));
     }
 }
