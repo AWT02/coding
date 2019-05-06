@@ -1,6 +1,5 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.carlos.eancode;
 
-import org.fundacionjala.coding.carlos.eancode.EanValidator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -34,5 +33,3 @@ public class EanValidatorTest {
         assertTrue(EanValidator.validate("9783827317100"));
     }
 }
-
-
