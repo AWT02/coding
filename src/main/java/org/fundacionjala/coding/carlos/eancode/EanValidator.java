@@ -14,7 +14,7 @@ public final class EanValidator {
      * @param eanCode is the ean code.
      * @return true or false
      */
-    static boolean validate(final String eanCode) {
+    public static boolean validate(final String eanCode) {
         int sumPares = 0;
         int sumImpares = 0;
         int sum = 0;
