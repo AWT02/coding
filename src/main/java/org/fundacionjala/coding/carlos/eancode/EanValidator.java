@@ -15,21 +15,21 @@ public final class EanValidator {
      * @return true or false
      */
     public static boolean validate(final String eanCode) {
-        int sumPares = 0;
-        int sumImpares = 0;
+        int sumEven = 0;
+        int sumOdd = 0;
         int sum = 0;
         final int multiplier = 3;
         final int ten = 10;
         final boolean result;
         for (int i = 0; i < eanCode.length() - 1; i++) {
             if (i % 2 == 0) {
-                sumPares += Integer.parseInt(String.valueOf(eanCode.charAt(i)));
+                sumEven += Integer.parseInt(String.valueOf(eanCode.charAt(i)));
             } else {
-                sumImpares += multiplier
+                sumOdd += multiplier
                         * Integer.parseInt(String.valueOf(eanCode.charAt(i)));
             }
         }
-        sum = sumImpares + sumPares;
+        sum = sumOdd + sumEven;
         final String ean = String.valueOf(eanCode.charAt(12));
         final String eanown;
         if (sum % ten == 0) {
