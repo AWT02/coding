@@ -7,7 +7,6 @@ public class Movie {
 
     private String title;
     private int priceCode;
-    private MovieType movieType;
 
     /**
      *

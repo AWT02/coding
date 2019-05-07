@@ -4,17 +4,13 @@ package org.fundacionjala.coding.carlos.videostore;
  * Father class.
  */
 public abstract class MovieType {
-    private int priceCode;
-    private double baseCost;
 
     /**
      *
      * @param code code of the proce.
      * @param cost base cost.
      */
-    MovieType(final int code, final double cost) {
-        this.priceCode = code;
-        this.baseCost = cost;
+       MovieType(final int code, final double cost) {
     }
 
     /**

@@ -54,12 +54,6 @@ public class Customer {
 
         }
 
-        //add footer lines
-//        result += "Amount owed is " + String.valueOf(5) +
-//                "\n";
-//        result += "You earned " + String.valueOf(3)
-//                +
-//                " frequent renter points";
         return result;
     }
 
