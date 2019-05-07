@@ -50,8 +50,6 @@ public class Customer {
     public String statement() {
         String result = "Rental Record for " + this.getName() + "\n";
         StringBuilder bld = new StringBuilder();
-
-        String str = bld.toString();
         for (final Rental rent : this.orderList) {
             bld.append(result);
             bld.append("\t");
