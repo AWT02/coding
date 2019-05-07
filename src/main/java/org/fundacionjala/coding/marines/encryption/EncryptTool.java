@@ -70,11 +70,10 @@ public final class EncryptTool {
      * @return string alphabet.
      */
     private static String generateAlphabet(final int seed) {
-        String copy = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String copy = ALPHABET;
         for (int i = 0; i < seed; i++) {
             final String aux = String.valueOf(copy.charAt(copy.length() - 1));
-            copy.replace(aux, "");
-            copy = aux.concat(copy);
+            copy = aux.concat(copy.replace(aux, ""));
         }
         return copy;
     }
