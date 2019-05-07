@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.carlos.videostore;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * this is the class costumer.
@@ -12,11 +13,11 @@ public class Customer {
      *
      * @return orderlist.
      */
-    public ArrayList<Rental> getOrderList() {
+    public List<Rental> getOrderList() {
         return orderList;
     }
 
-    private ArrayList<Rental> orderList = new ArrayList<Rental>();
+    private ArrayList<Rental> orderList = new ArrayList<>();
 
     /**
      *

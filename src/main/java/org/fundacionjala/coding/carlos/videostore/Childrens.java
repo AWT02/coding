@@ -6,7 +6,6 @@ public class Childrens extends MovieType {
     public static final int CHILDRENS = 2;
     public static final double BASE_COST = 1.5;
     public static final int REFERENCE_DAY = 3;
-    private double cost = 0;
 
 
     /**
@@ -18,10 +17,10 @@ public class Childrens extends MovieType {
 
     @Override
     public double calculatePay(final int days) {
-        this.cost = BASE_COST;
+        double cost = BASE_COST;
         if (days > REFERENCE_DAY) {
-            this.cost += (days - REFERENCE_DAY) * BASE_COST;
+            cost += (days - REFERENCE_DAY) * BASE_COST;
         }
-            return this.cost;
+            return cost;
     }
 }

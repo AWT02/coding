@@ -7,7 +7,6 @@ public class Regular extends MovieType {
     private static final int REGULAR = 0;
     private static final double BASE_COST = 2;
     private static final double FACTOR = 1;
-    private double cost = 0;
 
 
     /**
@@ -19,10 +18,10 @@ public class Regular extends MovieType {
 
     @Override
     public double calculatePay(final int days) {
-        this.cost = BASE_COST;
+        double cost = BASE_COST;
         if (days > 2) {
-            this.cost += (days - 2) * FACTOR;
+            cost += (days - 2) * FACTOR;
         }
-        return this.cost;
+        return cost;
     }
 }

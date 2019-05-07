@@ -39,7 +39,7 @@ public class Rental {
      * @return cost of the rent.
      */
     public double getrentCost() {
-        final MovieType movieType = this.movie.createtype(this.movie.getPriceCode());
+        final MovieType movieType = Movie.createtype(this.movie.getPriceCode());
         return movieType.calculatePay(this.daysRented);
     }
 }
