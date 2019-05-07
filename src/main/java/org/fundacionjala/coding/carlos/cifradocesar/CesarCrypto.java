@@ -1,11 +1,26 @@
 package org.fundacionjala.coding.carlos.cifradocesar;
 
-public class CesarCrypto {
+/**
+ * Kata for GUI automation.
+ */
+public final class CesarCrypto {
+    /**
+     * This is a constructor for sonarlint.
+     */
+    private CesarCrypto() {
+    }
 
-    public static String encode(String text, int code) {
+    /**
+     *
+     * @param word a work to encrypt
+     * @param codein number (positive value).
+     * @return encoded test.
+     */
+    public static String encode(final String word, final int codein) {
+
         StringBuilder enc = new StringBuilder();
-        code = code % 26;
-        text=text.toUpperCase();
+        int code = codein % 26;
+        String text = word.toUpperCase();
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) >= 'A' && text.charAt(i) <= 'Z') {
 
@@ -23,11 +38,17 @@ public class CesarCrypto {
         return enc.toString();
     }
 
-    public static String decode(String text, int code) {
+    /**
+     *
+     * @param word text to decode.
+     * @param codein is a negative integer.
+     * @return decoded text.
+     */
+    public static String decode(final String word, final int codein) {
         StringBuilder enc = new StringBuilder();
-        code = code % 26;
+        int code = codein % 26;
         code*=-1;
-        text=text.toUpperCase();
+        String text=word.toUpperCase();
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) >= 'A' && text.charAt(i) <= 'Z') {
 
@@ -45,15 +66,4 @@ public class CesarCrypto {
         return enc.toString();
     }
 
-    public static String encode(String msg, String clave) {
-        char[] claveA;
-        char[] resultado; //resultado cifrado
-        char matriz[][];
-        char[] mensaje = msg.toCharArray();
-        char[] claveTemp = clave.toCharArray();
-        claveA = new char[mensaje.length];
-        int cont =0;
-        for(int i=0;i<mensaje.length;i++)
-
-    }
 }
