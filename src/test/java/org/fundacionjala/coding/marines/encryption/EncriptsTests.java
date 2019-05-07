@@ -6,11 +6,12 @@ import static org.junit.Assert.assertEquals;
 
 /** Test for {@Link CesarEncripts} . **/
 public class EncriptsTests {
+    final int THREE = 3;
 
     /** Verify cesar encrypt. */
     @Test
     public void testCesarEncrypt() {
-        assertEquals("KROD", EncryptTool.encryptCesar("HOLA", 3));
+        assertEquals("KROD", EncryptTool.encryptCesar("HOLA", this.THREE));
         assertEquals("KROD IXQGDFLRQ MDOD", EncryptTool.encryptCesar(
                 "HOLA fundacion jala", 3));
     }
@@ -18,9 +19,9 @@ public class EncriptsTests {
     /** Verify cesar decrypt. */
     @Test
     public void testCesarDecrypt() {
-        assertEquals("HOLA", EncryptTool.decryptCesar("KROD", 3));
+        assertEquals("HOLA", EncryptTool.decryptCesar("KROD", this.THREE));
         assertEquals("HOLA FUNDACION JALA", EncryptTool.decryptCesar(
-                "KROD IXQGDFLRQ MDOD", 3));
+                "KROD IXQGDFLRQ MDOD", this.THREE));
     }
 
     /** Verify Vigenere encrypt. */

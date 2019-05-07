@@ -5,11 +5,12 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Tool to encript with cesar. **/
-public class EncryptTool {
+/** Tool to encrypt with cesar. **/
+public final class EncryptTool {
 
-    private static final String alphabet =
+    private static final String ALPHABET =
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 
     /** Default constructor. **/
     private EncryptTool() {
@@ -29,7 +30,7 @@ public class EncryptTool {
             for (final char ch : inUpper.toCharArray()) {
                 final int index = movedAlphabet.indexOf(ch);
                 if (index > -1) {
-                    encryptedText.append(alphabet.charAt(index));
+                    encryptedText.append(ALPHABET.charAt(index));
                 } else {
                     encryptedText.append(ch);
                 }
@@ -51,7 +52,7 @@ public class EncryptTool {
             final String movedAlphabet = generateAlphabet(seed);
             final StringBuilder decryptedText = new StringBuilder("");
             for (final char ch : inUpper.toCharArray()) {
-                final int index = alphabet.indexOf(ch);
+                final int index = ALPHABET.indexOf(ch);
                 if (index > -1) {
                     decryptedText.append(movedAlphabet.charAt(index));
                 } else {
@@ -92,16 +93,16 @@ public class EncryptTool {
             int indexList = 0;
             final StringBuilder encryptedText = new StringBuilder("");
             for (final char ch : inUpper.toCharArray()) {
-                if (alphabet.indexOf(ch) > -1) {
+                if (ALPHABET.indexOf(ch) > -1) {
                     if (indexList >= listRound.size()) {
                         indexList = 0;
                     }
                     final int round = listRound.get(indexList);
-                    int index = alphabet.indexOf(ch) + round;
-                    if (index > 25) {
-                        index = index - 26;
+                    int index = ALPHABET.indexOf(ch) + round;
+                    if (index > (ALPHABET.length() - 1)) {
+                        index = index - ALPHABET.length();
                     }
-                    encryptedText.append(alphabet.charAt(index));
+                    encryptedText.append(ALPHABET.charAt(index));
                     indexList++;
                 } else {
                     encryptedText.append(ch);
@@ -126,16 +127,16 @@ public class EncryptTool {
             int indexList = 0;
             final StringBuilder decryptedText = new StringBuilder("");
             for (final char ch : inUpper.toCharArray()) {
-                if (alphabet.indexOf(ch) > -1) {
+                if (ALPHABET.indexOf(ch) > -1) {
                     if (indexList >= listRound.size()) {
                         indexList = 0;
                     }
                     final int round = listRound.get(indexList);
-                    int index = alphabet.indexOf(ch) - round;
+                    int index = ALPHABET.indexOf(ch) - round;
                     if (index < 0) {
-                        index = index + 26;
+                        index = index + ALPHABET.length();
                     }
-                    decryptedText.append(alphabet.charAt(index));
+                    decryptedText.append(ALPHABET.charAt(index));
                     indexList++;
                 } else {
                     decryptedText.append(ch);
@@ -154,18 +155,9 @@ public class EncryptTool {
     private static List<Integer> getListRound(final String wordSeed) {
         final List<Integer> result = new ArrayList<>();
         for (final char ch : wordSeed.toCharArray()) {
-            final int index = alphabet.indexOf(ch);
+            final int index = ALPHABET.indexOf(ch);
             result.add(index + 1);
         }
         return result;
-    }
-
-    public static void main(final String[] args) {
-        System.out.println(EncryptTool.decryptCesar("KROD", 3));
-        System.out.println(EncryptTool.encryptCesar("HOLA", 3));
-        System.out.println(EncryptTool.encryptCesar("HOLA fundacion jala",
-                3));
-        System.out.println(EncryptTool.encryptVigenere("HOLA fundacion jala",
-                "limon"));
     }
 }
