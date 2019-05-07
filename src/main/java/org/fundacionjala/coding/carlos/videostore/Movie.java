@@ -5,15 +5,25 @@ package org.fundacionjala.coding.carlos.videostore;
  */
 public class Movie {
 
-    public String title;
+    private String title;
     public int priceCode;
     public MovieType movieType;
 
+    /**
+     *
+     * @param title of a movie.
+     * @param priceCode code of the movie.
+     */
     public Movie(final String title, final int priceCode) {
         this.title = title;
         this.priceCode = priceCode;
     }
 
+    /**
+     *
+     * @param priceCode
+     * @return an instance of MovieType.
+     */
     public static MovieType createtype(final int priceCode) {
         switch (priceCode) {
             case 0:
@@ -28,10 +38,18 @@ public class Movie {
         return null;
     }
 
+    /**
+     *
+     * @return return de proce code.
+     */
     public int getPriceCode() {
         return this.priceCode;
     }
 
+    /**
+     *
+     * @return title.
+     */
     public String getTitle() {
         return this.title;
     }

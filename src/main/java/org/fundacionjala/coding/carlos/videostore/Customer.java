@@ -2,22 +2,41 @@ package org.fundacionjala.coding.carlos.videostore;
 
 import java.util.ArrayList;
 
+/**
+ * this is the class costumer.
+ */
 public class Customer {
-    private final String _name;
-    public ArrayList<Rental> orderList = new ArrayList<Rental>();
+    private final String name;
+    private ArrayList<Rental> orderList = new ArrayList<Rental>();
 
+    /**
+     *
+     * @param name
+     */
     public Customer(final String name) {
-        this._name = name;
+        this.name = name;
     }
 
+    /**
+     *
+     * @param arg
+     */
     public void addRental(final Rental arg) {
         this.orderList.add(arg);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
-        return this._name;
+        return this.name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String statement() {
         String result = "Rental Record for " + this.getName() + "\n";
         for (final Rental rent : this.orderList) {
