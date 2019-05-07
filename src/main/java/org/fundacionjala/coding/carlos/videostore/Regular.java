@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.carlos.videostore;
 
 public class Regular extends MovieType {
     public static final int REGULAR = 0;

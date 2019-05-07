@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.carlos.videostore;
 
 public class Childrens extends MovieType {
     public static final int CHILDRENS = 2;

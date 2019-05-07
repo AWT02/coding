@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.carlos.videostore;
 
 public abstract class MovieType {
     public int PRICE_CODE;

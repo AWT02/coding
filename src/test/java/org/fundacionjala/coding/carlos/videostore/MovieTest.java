@@ -1,5 +1,8 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.carlos.videostore;
 
+import org.fundacionjala.coding.carlos.videostore.Movie;
+import org.fundacionjala.coding.carlos.videostore.MovieType;
+import org.fundacionjala.coding.carlos.videostore.Rental;
 import org.junit.Test;
 
 public class MovieTest {

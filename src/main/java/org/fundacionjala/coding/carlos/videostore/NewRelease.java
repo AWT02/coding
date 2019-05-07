@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.carlos.videostore;
 
 public class NewRelease extends MovieType {
     public static final int NEW_RELEASE = 1;
