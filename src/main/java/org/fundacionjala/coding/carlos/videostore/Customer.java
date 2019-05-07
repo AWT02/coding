@@ -7,6 +7,11 @@ import java.util.ArrayList;
  */
 public class Customer {
     private final String name;
+
+    public ArrayList<Rental> getOrderList() {
+        return orderList;
+    }
+
     private ArrayList<Rental> orderList = new ArrayList<Rental>();
 
     /**

@@ -6,8 +6,8 @@ package org.fundacionjala.coding.carlos.videostore;
 public class Movie {
 
     private String title;
-    public int priceCode;
-    public MovieType movieType;
+    private int priceCode;
+    private MovieType movieType;
 
     /**
      *
@@ -21,7 +21,7 @@ public class Movie {
 
     /**
      *
-     * @param priceCode
+     * @param priceCode price code.
      * @return an instance of MovieType.
      */
     public static MovieType createtype(final int priceCode) {

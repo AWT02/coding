@@ -1,14 +1,27 @@
 package org.fundacionjala.coding.carlos.videostore;
 
+/**
+ * Father class.
+ */
 public abstract class MovieType {
-    public int PRICE_CODE;
-    public double BASE_COST;
+    private int priceCode;
+    private double baseCost;
 
+    /**
+     *
+     * @param code code of the proce.
+     * @param cost base cost.
+     */
     MovieType(final int code, final double cost) {
-        this.PRICE_CODE = code;
-        this.BASE_COST = cost;
+        this.priceCode = code;
+        this.baseCost = cost;
     }
 
+    /**
+     *
+     * @param days day rented.
+     * @return rental cost of a specefic movie type.
+     */
     public abstract double calculatePay(int days);
 
 }
