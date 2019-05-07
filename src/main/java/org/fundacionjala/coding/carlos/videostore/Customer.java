@@ -49,13 +49,19 @@ public class Customer {
      */
     public String statement() {
         String result = "Rental Record for " + this.getName() + "\n";
+        StringBuilder bld = new StringBuilder();
+
+        String str = bld.toString();
         for (final Rental rent : this.orderList) {
-            result += "\t" + rent.getMovie().getTitle() + "\t" + String.valueOf(rent.getrentCost()) + "\n";
-            System.out.println(result);
+            bld.append(result);
+            bld.append("\t");
+            bld.append(rent.getMovie().getTitle());
+            bld.append(String.valueOf(rent.getrentCost()));
+            bld.append("\n");
 
         }
 
-        return result;
+        return bld.toString();
     }
 
 

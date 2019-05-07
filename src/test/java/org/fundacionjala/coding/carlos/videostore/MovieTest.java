@@ -39,6 +39,7 @@ public class MovieTest {
         customer.addRental(new Rental(new Movie("The Revenant", 1), 2));
         customer.addRental(new Rental(new Movie("Terminator", 0), 2));
         customer.addRental(new Rental(new Movie("dumbo", 2), 2));
+        customer.statement();
         final int expected = 3;
         assertEquals(expected, customer.getOrderList().size());
     }
