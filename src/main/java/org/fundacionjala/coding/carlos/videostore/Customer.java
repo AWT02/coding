@@ -11,7 +11,7 @@ public class Customer {
 
     /**
      *
-     * @param name
+     * @param name of the costumer.
      */
     public Customer(final String name) {
         this.name = name;
@@ -19,7 +19,7 @@ public class Customer {
 
     /**
      *
-     * @param arg
+     * @param arg is a Rental object.
      */
     public void addRental(final Rental arg) {
         this.orderList.add(arg);
@@ -27,7 +27,7 @@ public class Customer {
 
     /**
      *
-     * @return
+     * @return name of the costumer.
      */
     public String getName() {
         return this.name;
@@ -35,15 +35,11 @@ public class Customer {
 
     /**
      *
-     * @return
+     * @return detail of the costumer order.
      */
     public String statement() {
         String result = "Rental Record for " + this.getName() + "\n";
         for (final Rental rent : this.orderList) {
-            //show figures for this rental
-            //rent.getrentCost();
-            //System.out.println(rent.getrentCost());
-
             result += "\t" + rent.getMovie().getTitle() + "\t" + String.valueOf(rent.getrentCost()) + "\n";
             System.out.println(result);
 
