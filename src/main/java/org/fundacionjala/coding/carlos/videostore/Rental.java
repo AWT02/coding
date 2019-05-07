@@ -1,6 +1,6 @@
 package org.fundacionjala.coding;
 
-class Rental {
+public class Rental {
 
     public Movie movie;
     public int daysRented;
