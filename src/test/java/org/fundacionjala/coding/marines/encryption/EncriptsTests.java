@@ -12,23 +12,23 @@ public class EncriptsTests {
     /** Verify cesar encrypt. */
     @Test
     public void testCesarEncrypt() {
-        assertEquals("KROD", EncryptTool.encryptCesar("HOLA", this.THREE));
+        assertEquals("KROD", EncryptTool.encryptCesar("HOLA", THREE));
         assertEquals("KROD IXQGDFLRQ MDOD", EncryptTool.encryptCesar(
-                "HOLA fundacion jala", 3));
-        assertEquals("", EncryptTool.encryptCesar("", this.THREE));
-        assertEquals("", EncryptTool.encryptCesar(" ", this.THREE));
-        assertEquals("", EncryptTool.encryptCesar(null, this.THREE));
+                "HOLA fundacion jala", THREE));
+        assertEquals("", EncryptTool.encryptCesar("", THREE));
+        assertEquals("", EncryptTool.encryptCesar(" ", THREE));
+        assertEquals("", EncryptTool.encryptCesar(null, THREE));
     }
 
     /** Verify cesar decrypt. */
     @Test
     public void testCesarDecrypt() {
-        assertEquals("HOLA", EncryptTool.decryptCesar("KROD", this.THREE));
+        assertEquals("HOLA", EncryptTool.decryptCesar("KROD", THREE));
         assertEquals("HOLA FUNDACION JALA", EncryptTool.decryptCesar(
-                "KROD IXQGDFLRQ MDOD", this.THREE));
-        assertEquals("", EncryptTool.decryptCesar("", this.THREE));
-        assertEquals("", EncryptTool.decryptCesar(" ", this.THREE));
-        assertEquals("", EncryptTool.decryptCesar(null, this.THREE));
+                "KROD IXQGDFLRQ MDOD", THREE));
+        assertEquals("", EncryptTool.decryptCesar("", THREE));
+        assertEquals("", EncryptTool.decryptCesar(" ", THREE));
+        assertEquals("", EncryptTool.decryptCesar(null, THREE));
     }
 
     /** Verify Vigenere encrypt. */
